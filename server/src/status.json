@@ -1,0 +1,90 @@
+[
+  {
+    "funcionando": 0,
+    "horario": "21:25"
+  },
+  {
+    "funcionando": 1,
+    "horario": "21:23"
+  },
+  {
+    "funcionando": false,
+    "horario": "21:30"
+  },
+  {
+    "funcionando": false,
+    "horario": "21:40"
+  },
+  {
+    "funcionando": false,
+    "horario": "21:50"
+  },
+  {
+    "funcionando": false,
+    "horario": "23:00"
+  },
+  {
+    "funcionando": 0,
+    "horario": "17:00"
+  },
+  {
+    "funcionando": 0,
+    "horario": "17:00"
+  },
+  {
+    "funcionando": 0,
+    "horario": "17:00"
+  },
+  {
+    "funcionando": 0,
+    "horario": "17:00"
+  },
+  {
+    "funcionando": 1,
+    "horario": "17:01"
+  },
+  {
+    "funcionando": 1,
+    "horario": "17:01"
+  },
+  {
+    "funcionando": 0,
+    "horario": "17:02"
+  },
+  {
+    "funcionando": 1,
+    "horario": "17:03"
+  },
+  {
+    "funcionando": 0,
+    "horario": "17:13"
+  },
+  {
+    "funcionando": 1,
+    "horario": "17:13"
+  },
+  {
+    "funcionando": 1,
+    "horario": "17:36"
+  },
+  {
+    "funcionando": 0,
+    "horario": "17:36"
+  },
+  {
+    "funcionando": 1,
+    "horario": "18:06"
+  },
+  {
+    "funcionando": 1,
+    "horario": "18:06"
+  },
+  {
+    "funcionando": 0,
+    "horario": "18:07"
+  },
+  {
+    "funcionando": 1,
+    "horario": "18:07"
+  }
+]

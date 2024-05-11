@@ -1,0 +1,18 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+select option#yes{
+  color: #10b981;
+}
+select:focus > option:checked{
+  background-color: #020617 !important;
+}
+select:focus > option:hover{
+  background-color: #020617 !important;
+}
+select option#no{
+  color: #dc2626;
+}
