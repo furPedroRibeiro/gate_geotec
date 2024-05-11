@@ -27,7 +27,7 @@ app.get('./funcionamento', (req, res) => {
   return res.json(status)
 })
 
-app.post('/funcionamento', (req, res) => {
+app.post('./funcionamento', (req, res) => {
   const newStatus = req.body
   const filePath = './src/status.json'
   const encoding = 'utf-8'

@@ -5,7 +5,7 @@ import api from './api.tsx'
 export function App() {
   const [statusOfGate, setStatusOfGate] = useState<any[]>([])
   useEffect(() =>{
-      api.get('/funcionamento').then(res=>{
+      api.get('https://portaomatadouro.vercel.app/funcionamento').then(res=>{
         setStatusOfGate(res.data.reverse().slice(0,10))
         console.log(res.data)
       }).catch((err)=>{
@@ -18,7 +18,7 @@ export function App() {
   let hourStatus = dataHoraBrasil.charAt(12) + dataHoraBrasil.charAt(13) + dataHoraBrasil.charAt(14) + dataHoraBrasil.charAt(15) + dataHoraBrasil.charAt(16)
   console.log(hourStatus)
   function notOpen(){
-    api.post('http://localhost:3000/funcionamento', {
+    api.post('https://portaomatadouro.vercel.app/funcionamento', {
       funcionando: 0,
       horario: hourStatus
     })
@@ -27,7 +27,7 @@ export function App() {
     })
   }
   function open(){
-    api.post('http://localhost:3000/funcionamento', {
+    api.post('https://portaomatadouro.vercel.app/', {
       funcionando: 1,
       horario: hourStatus
     })
