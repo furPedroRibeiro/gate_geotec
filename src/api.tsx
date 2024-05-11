@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'https://portaomatadouro.vercel.app/'
+  baseURL: 'https://localhost:3000/funcionamento'
 });

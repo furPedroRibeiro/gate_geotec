@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://portaomatadouro.vercel.app");
+  res.setHeader("Access-Control-Allow-Origin", "https://localhost:3000/funcionamento");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json())
 
-app.get('./funcionamento', (req, res) => {
+app.get('https://localhost:3000/funcionamento', (req, res) => {
   // const lerJson = JSONRead('status.json').then(console.log).catch(console.error);
   // return res(lerJson)
   let status
@@ -27,7 +27,7 @@ app.get('./funcionamento', (req, res) => {
   return res.json(status)
 })
 
-app.post('./funcionamento', (req, res) => {
+app.post('https://localhost:3000/funcionamento', (req, res) => {
   const newStatus = req.body
   const filePath = './src/status.json'
   const encoding = 'utf-8'
