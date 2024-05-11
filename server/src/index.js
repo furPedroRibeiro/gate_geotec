@@ -39,6 +39,6 @@ app.post('./funcionamento', (req, res) => {
   return res.json(newData)
 })
 
-app.listen('https://portaomatadouro.vercel.app/', () => {
+app.listen(3000, 'https://portaomatadouro.vercel.app/', () => {
   console.log("Servidor ta on, aiiii")
 })
