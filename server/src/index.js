@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:5173");
+  res.setHeader("Access-Control-Allow-Origin", "https://portaomatadouro.vercel.app");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json())
 
-app.get('/funcionamento', (req, res) => {
+app.get('./funcionamento', (req, res) => {
   // const lerJson = JSONRead('status.json').then(console.log).catch(console.error);
   // return res(lerJson)
   let status
@@ -39,6 +39,6 @@ app.post('/funcionamento', (req, res) => {
   return res.json(newData)
 })
 
-app.listen(3000, () => {
+app.listen('https://portaomatadouro.vercel.app/', () => {
   console.log("Servidor ta on, aiiii")
 })
