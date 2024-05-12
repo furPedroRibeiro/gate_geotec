@@ -37,7 +37,7 @@ export function App() {
   }
   return (
     <main className='px-12 py-32 gap-4 flex flex-col items-center justify-center md:w-[800px] mx-auto'>
-      <h1 className="text-white font-main font-semibold text-2xl flex gap-3 flex-wrap">Portão da Geotec 
+      <h1 className="text-white font-main font-semibold text-2xl flex gap-3 flex-wrap items-center justify-center">Portão da Geotec 
       <img className='object-cover' src="https://scs.usp.br/identidadevisual/wp-content/uploads/2022/08/logo_usp_branco.png" alt="Logo da USP contendo 3 letras escrito: USP" width={80}/>
       </h1>
       <p className='font-main text-md text-emerald-50 text-center'>Este site tem como objetivo manter atualizadas as informações sobre o portão da Geotec (matadouro). Contamos sempre com o senso de comunidade para manter as informações atualizadas.</p>
