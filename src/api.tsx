@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-  baseURL: 'https://localhost:3000/funcionamento'
+  baseURL: 'https://api-gate-geotec.onrender.com/funcionamento'
 });
