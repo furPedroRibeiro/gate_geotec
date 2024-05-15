@@ -52,11 +52,11 @@ export function App() {
           <h2 className='font-main text-white font-semibold text-2xl'>Status</h2>
           {statusOfGate.map(status=>{
               if(status.funcionando == 0)
-                return <div className='flex w-full justify-between items-center'>
+                return <div className='flex w-full m-auto justify-between items-center'>
                   <p className='font-main text-white [text-shadow:_1px_1px_0_rgb(0_0_0_/_70%)] text-center py-1 w-12 bg-red-600 rounded-md'>Não </p>
                   <p className='font-main text-white'>{status.horario}</p>
                 </div>
-                return <div className='flex w-full justify-between items-center'>
+                return <div className='flex w-full m-auto justify-between items-center'>
                   <p className='font-main text-white [text-shadow:_1px_1px_0_rgb(0_0_0_/_70%)] text-center py-1 w-12 bg-green-600 rounded-md'>Sim </p>
                   <p className='font-main text-white'>{status.horario}</p>
                 </div>
