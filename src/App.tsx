@@ -6,6 +6,7 @@ export function App() {
   const [statusOfGate, setStatusOfGate] = useState<any[]>([])
   const [status, setStatus] = useState(2)
   window.onload = function(){
+    console.log("consumindo api")
     api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
       setStatusOfGate(res.data.reverse().slice(0,10))
     }).catch((err)=>{
