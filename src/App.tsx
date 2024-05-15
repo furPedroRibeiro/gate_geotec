@@ -17,6 +17,7 @@ export function App() {
       })
     }
     const dataAtual = new Date();
+    console.log(dataAtual.getHours().toString)
     const hourStatus = dataAtual.getHours().toString + ":" + dataAtual.getMinutes().toString + " " + dataAtual.getDay().toString + "/" + dataAtual.getMonth().toString
     if(status == 0){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
