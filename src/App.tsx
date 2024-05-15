@@ -18,30 +18,23 @@ export function App() {
     }
     const dataAtual = new Date();
     console.log(dataAtual.getHours().toString())
-    const hourStatus = dataAtual.getHours().toString + ":" + dataAtual.getMinutes().toString + " " + dataAtual.getDay().toString + "/" + dataAtual.getMonth().toString
+    const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + dataAtual.getDay().toString() + "/" + dataAtual.getMonth().toString()
     if(status == 0){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
         funcionando: status,
         horario: hourStatus
-      }).then(()=>{
-        api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
-          setStatusOfGate(res.data.reverse().slice(0,10))
-        }).catch((err)=>{
-          console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
-        })
       })
     } else if(status == 1){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
         funcionando: status,
         horario: hourStatus
-      }).then(()=>{
-        api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
-          setStatusOfGate(res.data.reverse().slice(0,10))
-        }).catch((err)=>{
-          console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
-        })
       })
     }
+    api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
+      setStatusOfGate(res.data.reverse().slice(0,10))
+    }).catch((err)=>{
+      console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
+    })
   })
   return (
     <main className='px-12 py-32 gap-4 flex flex-col items-center justify-center md:w-[800px] mx-auto'>
