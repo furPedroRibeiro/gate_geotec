@@ -17,7 +17,7 @@ export function App() {
       })
     }
     const dataAtual = new Date();
-    const hourStatus = dataAtual.getHours() + ":" + dataAtual.getMinutes() + " " + dataAtual.getDay() + "/" + dataAtual.getMonth()
+    const hourStatus = dataAtual.getHours().toString + ":" + dataAtual.getMinutes().toString + " " + dataAtual.getDay().toString + "/" + dataAtual.getMonth().toString
     if(status == 0){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
         funcionando: status,
@@ -52,7 +52,7 @@ export function App() {
         <p id="title" className="font-main text-emerald-50">O portão está funcionando?</p>
         <div className="flex items-center justify-center gap-3">
           <button onClick={()=>setStatus(1)} className="py-2 px-3 rounded-md w-20 bg-green-500 text-white font-main font-medium hover:bg-opacity-80 transition-colors duration-700 text-center text-shadow-md shadow-black [text-shadow:_1px_1px_0_rgb(0_0_0_/_50%)]">Sim</button>
-          <button onClick={()=>setStatus(1)} className="py-2 px-3 rounded-md w-20 bg-red-600 text-white font-main font-medium hover:bg-opacity-80 transition-colors duration-700 text-center text-shadow-md shadow-black [text-shadow:_1px_1px_0_rgb(0_0_0_/_50%)]">Não</button>
+          <button onClick={()=>setStatus(0)} className="py-2 px-3 rounded-md w-20 bg-red-600 text-white font-main font-medium hover:bg-opacity-80 transition-colors duration-700 text-center text-shadow-md shadow-black [text-shadow:_1px_1px_0_rgb(0_0_0_/_50%)]">Não</button>
         </div>
         <div className='m-auto flex flex-col items-center justify-center gap-4'>
           <h2 className='font-main text-white font-semibold text-2xl'>Status</h2>
