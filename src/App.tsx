@@ -15,17 +15,28 @@ export function App() {
       })
     }
     const dataAtual = new Date();
-    dataAtual.getHours;
     const hourStatus = dataAtual.getHours() + ":" + dataAtual.getMinutes() + " " + dataAtual.getDay() + "/" + dataAtual.getMonth()
     if(status == 0){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
         funcionando: status,
         horario: hourStatus
+      }).then(()=>{
+        api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
+          setStatusOfGate(res.data.reverse().slice(0,10))
+        }).catch((err)=>{
+          console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
+        })
       })
     } else if(status == 1){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
         funcionando: status,
         horario: hourStatus
+      }).then(()=>{
+        api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
+          setStatusOfGate(res.data.reverse().slice(0,10))
+        }).catch((err)=>{
+          console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
+        })
       })
     }
   })
