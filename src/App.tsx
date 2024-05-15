@@ -4,7 +4,7 @@ import api from './api.tsx'
 
 export function App() {
   const [statusOfGate, setStatusOfGate] = useState<any[]>([])
-  const [status, setStatus] = useState(1)
+  const [status, setStatus] = useState(2)
   window.onload = function(){
     api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
       setStatusOfGate(res.data.reverse().slice(0,10))
