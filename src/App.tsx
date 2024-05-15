@@ -6,7 +6,7 @@ export function App() {
   const [statusOfGate, setStatusOfGate] = useState<any[]>([])
   const [status, setStatus] = useState(1)
   window.onload = function(){
-    api.get('./funcionamento').then(res=>{
+    api.get('https://api-gate-geotec.onrender.com').then(res=>{
       setStatusOfGate(res.data.reverse().slice(0,10))
     }).catch((err)=>{
       console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
@@ -15,14 +15,14 @@ export function App() {
   useEffect(() =>{
     const dataAtual = new Date();
     dataAtual.getHours;
-    const hourStatus = dataAtual.getHours() + ":" + dataAtual.getMinutes() + ":" + dataAtual.getSeconds() + " " + dataAtual.getDay() + "/" + dataAtual.getMonth()
+    const hourStatus = dataAtual.getHours() + ":" + dataAtual.getMinutes() + " " + dataAtual.getDay() + "/" + dataAtual.getMonth()
     if(status == 0){
-      api.post('./funcionamento', {
+      api.post('https://api-gate-geotec.onrender.com', {
         funcionando: status,
         horario: hourStatus
       })
     } else if(status == 1){
-      api.post('./funcionamento', {
+      api.post('https://api-gate-geotec.onrender.com', {
         funcionando: status,
         horario: hourStatus
       })
