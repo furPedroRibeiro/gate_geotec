@@ -21,7 +21,7 @@ export function App() {
       horario: hourStatus
     })
     .then(function () {
-      location.reload()
+      window.location.reload()
     })
   }
   function open(){
@@ -30,7 +30,7 @@ export function App() {
       horario: hourStatus
     })
     .then(function () {
-      location.reload()
+      window.location.reload()
     })
   }
   return (
