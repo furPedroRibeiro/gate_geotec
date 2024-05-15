@@ -7,7 +7,6 @@ export function App() {
   useEffect(() =>{
       api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
         setStatusOfGate(res.data.reverse().slice(0,10))
-        console.log(res.data)
       }).catch((err)=>{
         console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
       })
@@ -16,9 +15,8 @@ export function App() {
   const options = { timeZone: 'America/Sao_Paulo' };
   const dataHoraBrasil = dataAtual.toLocaleString('pt-BR', options);
   let hourStatus = dataHoraBrasil.charAt(12) + dataHoraBrasil.charAt(13) + dataHoraBrasil.charAt(14) + dataHoraBrasil.charAt(15) + dataHoraBrasil.charAt(16)
-  console.log(hourStatus)
   function notOpen(){
-    api.post('https://api-gate-geotec.onrender.com/funcionamento', {
+    api.post('./funcionamento', {
       funcionando: 0,
       horario: hourStatus
     })
@@ -27,7 +25,7 @@ export function App() {
     })
   }
   function open(){
-    api.post('https://api-gate-geotec.onrender.com/funcionamento', {
+    api.post('./funcionamento', {
       funcionando: 1,
       horario: hourStatus
     })
