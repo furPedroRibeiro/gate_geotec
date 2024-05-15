@@ -5,15 +5,15 @@ import api from './api.tsx'
 export function App() {
   const [statusOfGate, setStatusOfGate] = useState<any[]>([])
   const [status, setStatus] = useState(2)
-  window.onload = function(){
-    console.log("consumindo api")
-    api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
-      setStatusOfGate(res.data.reverse().slice(0,10))
-    }).catch((err)=>{
-      console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
-    })
-  }
   useEffect(() =>{
+    if(status==2){
+      console.log("consumindo api")
+      api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
+        setStatusOfGate(res.data.reverse().slice(0,10))
+      }).catch((err)=>{
+        console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
+      })
+    }
     const dataAtual = new Date();
     dataAtual.getHours;
     const hourStatus = dataAtual.getHours() + ":" + dataAtual.getMinutes() + " " + dataAtual.getDay() + "/" + dataAtual.getMonth()
