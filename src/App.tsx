@@ -20,7 +20,7 @@ export function App() {
       funcionando: 0,
       horario: hourStatus
     })
-    .then(function () {
+    .then(()=>{
       window.location.reload()
     })
   }
@@ -29,7 +29,7 @@ export function App() {
       funcionando: 1,
       horario: hourStatus
     })
-    .then(function () {
+    .then(()=>{
       window.location.reload()
     })
   }
