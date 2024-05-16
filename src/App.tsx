@@ -36,7 +36,7 @@ export function App() {
     function closed(){
       const data = 
         {
-          'funcionando': 1,
+          'funcionando': 0,
           'horario': hourStatus
         }
       api.post('/funcionamento', data).then(()=>{
