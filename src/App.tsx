@@ -7,7 +7,7 @@ export function App() {
   const [showStatus, setShowStatus] = useState(1)
   useEffect(() =>{
     if(showStatus==1){
-      api.get('https://api-gate-geotec.onrender.com/funcionamento').then(res=>{
+      api.get('/funcionamento').then(res=>{
         setStatusOfGate(res.data.reverse().slice(0,10))
       }).then(()=>{
         setShowStatus(0)
@@ -19,7 +19,7 @@ export function App() {
     const dataAtual = new Date();
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + dataAtual.getDay().toString() + "/" + dataAtual.getMonth().toString()
     function open(){
-      api.post('https://api-gate-geotec.onrender.com/funcionamento', {
+      api.post('/funcionamento', {
         funcionando: 1,
         horario: hourStatus
       }).then(()=>{
@@ -29,7 +29,7 @@ export function App() {
       })
     }
     function closed(){
-      api.post('https://api-gate-geotec.onrender.com/funcionamento', {
+      api.post('/funcionamento', {
         funcionando: 0,
         horario: hourStatus
       }).then(()=>{
