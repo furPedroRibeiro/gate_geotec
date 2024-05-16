@@ -20,23 +20,29 @@ export function App() {
     const dataAtual = new Date();
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + dataAtual.getDay().toString() + "/" + dataAtual.getMonth().toString()
     function open(){
-      api.post('/funcionamento', {
-        funcionando: 1,
-        horario: hourStatus
-      }).then(()=>{
+      const data = 
+        {
+          'funcionando': 1,
+          'horario': hourStatus
+        }
+      api.post('/funcionamento', data).then(()=>{
+        console.log("Tudo certo com o post")
         setShowStatus(1)
-      },()=>{
+      }).catch(()=>{
         console.log("Erro ao fazer requisição post")
         setShowStatus(1)
       })
     }
     function closed(){
-      api.post('/funcionamento', {
-        funcionando: 0,
-        horario: hourStatus
-      }).then(function(){
+      const data = 
+        {
+          'funcionando': 1,
+          'horario': hourStatus
+        }
+      api.post('/funcionamento', data).then(()=>{
         setShowStatus(1)
-      },function(){
+        console.log("Tudo certo com o post")
+      }).catch(()=>{
         console.log("Erro ao fazer requisição post")
         setShowStatus(1)
       })
