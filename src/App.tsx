@@ -26,16 +26,18 @@ export function App() {
         setShowStatus(1)
       },()=>{
         console.log("Erro ao fazer requisição post")
+        setShowStatus(1)
       })
     }
     function closed(){
       api.post('/funcionamento', {
         funcionando: 0,
         horario: hourStatus
-      }).then(()=>{
+      }).then(function(){
         setShowStatus(1)
-      },()=>{
+      },function(){
         console.log("Erro ao fazer requisição post")
+        setShowStatus(1)
       })
     }
   return (
