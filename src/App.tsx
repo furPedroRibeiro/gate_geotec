@@ -11,6 +11,7 @@ export function App() {
         setStatusOfGate(res.data.reverse().slice(0,10))
       }).then(()=>{
         setShowStatus(0)
+        console.log("Tudo certo com o get!!!")
       }).catch((err)=>{
         console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
       })
