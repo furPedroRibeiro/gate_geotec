@@ -19,31 +19,21 @@ export function App() {
   })
     const dataAtual = new Date();
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + dataAtual.getDay().toString() + "/" + dataAtual.getMonth().toString()
-    function open(){
-      const data = 
-        {
-          'funcionando': 1,
-          'horario': hourStatus
-        }
-      api.post('/funcionamento', data).then(()=>{
-        console.log("Tudo certo com o post")
-        setShowStatus(1)
-      }).catch(()=>{
-        console.log("Erro ao fazer requisição post")
+    function closed(){
+      api.post('https://api-gate-geotec.onrender.com/funcionamento', {
+        funcionando: 0,
+        horario: hourStatus
+      })
+      .then(function () {
         setShowStatus(1)
       })
     }
-    function closed(){
-      const data = 
-        {
-          'funcionando': 0,
-          'horario': hourStatus
-        }
-      api.post('/funcionamento', data).then(()=>{
-        setShowStatus(1)
-        console.log("Tudo certo com o post")
-      }).catch(()=>{
-        console.log("Erro ao fazer requisição post")
+    function open(){
+      api.post('https://api-gate-geotec.onrender.com/funcionamento', {
+        funcionando: 1,
+        horario: hourStatus
+      })
+      .then(function () {
         setShowStatus(1)
       })
     }
