@@ -18,23 +18,23 @@ export function App() {
     }
   })
     const dataAtual = new Date();
-    const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + dataAtual.getDay().toString() + "/" + dataAtual.getMonth().toString()
+    const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString()
     function closed(){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
         funcionando: 0,
         horario: hourStatus
-      })
-      .then(function () {
+      }).then(function () {
         setShowStatus(1)
+        window.location.reload()
       })
     }
     function open(){
       api.post('https://api-gate-geotec.onrender.com/funcionamento', {
         funcionando: 1,
         horario: hourStatus
-      })
-      .then(function () {
+      }).then(function () {
         setShowStatus(1)
+        window.location.reload()
       })
     }
   return (
