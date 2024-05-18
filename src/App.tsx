@@ -14,6 +14,7 @@ export function App() {
         console.log("Tudo certo com o get!!!")
       }).catch((err)=>{
         console.error("Ops!! Um erro aconteceu ao consumir axios!"+err)
+        window.location.reload()
       })
     },[showStatus])
     const dataAtual = new Date();
