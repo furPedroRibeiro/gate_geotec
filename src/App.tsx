@@ -9,28 +9,29 @@ export function App() {
       api.get('/funcionamento').then(res=>{
         setStatusOfGate(res.data.reverse().slice(0,10))
       }).then(()=>{
-        setShowStatus(0)
         console.log(showStatus)
         console.log("Tudo certo com o get!!!")
       }).catch((err)=>{
         console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
       })
-    })
+    },[showStatus==2])
     const dataAtual = new Date();
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString()
     function closed(){
       api.post('/funcionamento', {
         funcionando: 0,
         horario: hourStatus
+      }).then(()=>{
+        setShowStatus(2)
       })
-      window.location.reload()
     }
     function open(){
       api.post('/funcionamento', {
         funcionando: 1,
         horario: hourStatus
+      }).then(()=>{
+        setShowStatus(2)
       })
-      window.location.reload()
     }
   return (
     <main className='px-12 py-32 gap-4 flex flex-col items-center justify-center md:w-[800px] mx-auto'>
