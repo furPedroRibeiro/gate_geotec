@@ -28,6 +28,7 @@ export function App() {
       }).catch(()=>{
         console.log("Não ta indo o post amigao")
         setShowStatus(2)
+        window.location.reload()
       })
     }
     function open(){
@@ -39,6 +40,7 @@ export function App() {
       }).catch(()=>{
         console.log("Não ta indo o post amigao")
         setShowStatus(2)
+        window.location.reload()
       })
     }
   return (
