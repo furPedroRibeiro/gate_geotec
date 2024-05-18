@@ -23,6 +23,8 @@ export function App() {
         horario: hourStatus
       }).then(()=>{
         setShowStatus(2)
+      }).catch(()=>{
+        console.log("Não ta indo o post amigao")
       })
     }
     function open(){
@@ -31,6 +33,8 @@ export function App() {
         horario: hourStatus
       }).then(()=>{
         setShowStatus(2)
+      }).catch(()=>{
+        console.log("Não ta indo o post amigao")
       })
     }
   return (
