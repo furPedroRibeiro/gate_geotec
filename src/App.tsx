@@ -1,25 +1,26 @@
 import { useEffect, useState } from 'react'
 import './css/App.css'
-import api from './api.tsx'
+import axios from 'axios'
 
 export function App() {
+  const baseUrl = 'https://api-gate-geotec.onrender.com/funcionamento'
   const [statusOfGate, setStatusOfGate] = useState<any[]>([])
   const [showStatus, setShowStatus] = useState(1)
   useEffect(() =>{
-      api.get('/funcionamento').then(res=>{
+      axios.get(baseUrl).then(res=>{
         setStatusOfGate(res.data.reverse().slice(0,10))
       }).then(()=>{
         setShowStatus(0)
         console.log(showStatus)
         console.log("Tudo certo com o get!!!")
       }).catch((err)=>{
-        console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
+        console.error("Ops!! Um erro aconteceu ao consumir axios!!!"+err)
       })
     },[showStatus==2])
     const dataAtual = new Date();
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString()
     function closed(){
-      api.post('/funcionamento', {
+      axios.post(baseUrl, {
         funcionando: 0,
         horario: hourStatus
       }).then(()=>{
@@ -30,7 +31,7 @@ export function App() {
       })
     }
     function open(){
-      api.post('/funcionamento', {
+      axios.post(baseUrl, {
         funcionando: 1,
         horario: hourStatus
       }).then(()=>{
