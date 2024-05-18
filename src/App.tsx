@@ -23,19 +23,15 @@ export function App() {
       api.post('/funcionamento', {
         funcionando: 0,
         horario: hourStatus
-      }).then(function () {
-        setShowStatus(1)
-        window.location.reload()
       })
+      setShowStatus(1)
     }
     function open(){
       api.post('/funcionamento', {
         funcionando: 1,
         horario: hourStatus
-      }).then(function () {
-        setShowStatus(1)
-        window.location.reload()
       })
+      setShowStatus(1)
     }
   return (
     <main className='px-12 py-32 gap-4 flex flex-col items-center justify-center md:w-[800px] mx-auto'>
