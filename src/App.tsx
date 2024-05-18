@@ -6,7 +6,6 @@ export function App() {
   const [statusOfGate, setStatusOfGate] = useState<any[]>([])
   const [showStatus, setShowStatus] = useState(1)
   useEffect(() =>{
-    if(showStatus==1){
       api.get('/funcionamento').then(res=>{
         setStatusOfGate(res.data.reverse().slice(0,10))
       }).then(()=>{
@@ -16,8 +15,7 @@ export function App() {
       }).catch((err)=>{
         console.error("Ops!! Um erro aconteceu ao consumir api!!!"+err)
       })
-    }
-  })
+    })
     const dataAtual = new Date();
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString()
     function closed(){
