@@ -9,6 +9,7 @@ export function App() {
       api.get('/funcionamento').then(res=>{
         setStatusOfGate(res.data.reverse().slice(0,10))
       }).then(()=>{
+        setShowStatus(0)
         console.log(showStatus)
         console.log("Tudo certo com o get!!!")
       }).catch((err)=>{
@@ -19,7 +20,7 @@ export function App() {
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString()
     function closed(){
       api.post('/funcionamento', {
-        funcionando: "0",
+        funcionando: 0,
         horario: hourStatus
       }).then(()=>{
         setShowStatus(2)
