@@ -19,7 +19,7 @@ export function App() {
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString()
     function closed(){
       api.post('/funcionamento', {
-        funcionando: 0,
+        funcionando: "0",
         horario: hourStatus
       }).then(()=>{
         setShowStatus(2)
