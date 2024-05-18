@@ -26,6 +26,7 @@ export function App() {
         setShowStatus(2)
       }).catch(()=>{
         console.log("Não ta indo o post amigao")
+        setShowStatus(2)
       })
     }
     function open(){
@@ -36,6 +37,7 @@ export function App() {
         setShowStatus(2)
       }).catch(()=>{
         console.log("Não ta indo o post amigao")
+        setShowStatus(2)
       })
     }
   return (
