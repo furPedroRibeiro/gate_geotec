@@ -16,7 +16,7 @@ export function App() {
       }).catch((err)=>{
         console.error("Ops!! Um erro aconteceu ao consumir axios!!!"+err)
       })
-    },[showStatus==2])
+    },[showStatus])
     const dataAtual = new Date();
     let sendHour = dataAtual.getHours().toString()
     let sendMinutes = dataAtual.getHours().toString()
