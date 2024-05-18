@@ -18,7 +18,32 @@ export function App() {
       })
     },[showStatus==2])
     const dataAtual = new Date();
-    const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString()
+    let sendHour = dataAtual.getHours().toString()
+    let sendMinutes = dataAtual.getHours().toString()
+    let sendDay = dataAtual.getDay()
+    let sendDayString
+    if(sendHour.length<2){
+      sendHour = "0" + sendHour
+    }
+    if(sendMinutes.length<2){
+      sendMinutes = "0" + sendMinutes
+    }
+    if(sendDay == 0){
+      sendDayString = 'Segunda'
+    } else if(sendDay == 1){
+      sendDayString = 'Terça'
+    } else if(sendDay == 2){
+      sendDayString = 'Quarta'
+    } else if(sendDay == 3){
+      sendDayString = 'Quinta'
+    } else if(sendDay == 4){
+      sendDayString = 'Sexta'
+    } else if(sendDay == 5){
+      sendDayString = 'Sábado'
+    } else if(sendDay == 6){
+      sendDayString = 'Domingo'
+    }
+    const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + sendDayString
     function closed(){
       axios.post(baseUrl, {
         funcionando: 0,
