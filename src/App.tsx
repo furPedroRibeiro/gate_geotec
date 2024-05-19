@@ -28,19 +28,19 @@ export function App() {
     if(sendMinutes.length<2){
       sendMinutes = "0" + sendMinutes
     }
-    if(sendDay == 0){
+    if(sendDay == 1){
       sendDayString = 'Segunda'
-    } else if(sendDay == 1){
-      sendDayString = 'Terça'
     } else if(sendDay == 2){
-      sendDayString = 'Quarta'
+      sendDayString = 'Terça'
     } else if(sendDay == 3){
-      sendDayString = 'Quinta'
+      sendDayString = 'Quarta'
     } else if(sendDay == 4){
-      sendDayString = 'Sexta'
+      sendDayString = 'Quinta'
     } else if(sendDay == 5){
-      sendDayString = 'Sábado'
+      sendDayString = 'Sexta'
     } else if(sendDay == 6){
+      sendDayString = 'Sábado'
+    } else if(sendDay == 7){
       sendDayString = 'Domingo'
     }
     const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + sendDayString
