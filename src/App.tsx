@@ -19,13 +19,13 @@ export function App() {
     },[showStatus])
     const dataAtual = new Date();
     let sendHour = dataAtual.getHours().toString()
-    let sendMinutes = dataAtual.getHours().toString()
+    let sendMinutes = dataAtual.getMinutes().toString()
     let sendDay = dataAtual.getDay()
     let sendDayString
-    if(sendHour.length<2){
+    if(sendHour.length==1){
       sendHour = "0" + sendHour
     }
-    if(sendMinutes.length<2){
+    if(sendMinutes.length==1){
       sendMinutes = "0" + sendMinutes
     }
     if(sendDay == 0){
