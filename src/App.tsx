@@ -43,7 +43,7 @@ export function App() {
     } else if(sendDay == 6){
       sendDayString = 'Sábado'
     }
-    const hourStatus = dataAtual.getHours().toString() + ":" + dataAtual.getMinutes().toString() + " " + sendDayString
+    const hourStatus = sendHour + ":" + sendMinutes + " " + sendDayString
     function closed(){
       axios.post(baseUrl, {
         funcionando: 0,
